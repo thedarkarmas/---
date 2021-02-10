@@ -1,8 +1,17 @@
 <?php
  require_once("dbcon.php");
  $sql = "SELECT * FROM movie";
+ if(isset($_GET['search_click'])) {
+    $sql = "SELECT * FROM movie WHERE movie_id LIKE '%{$_GET['search']}%' OR movie_name LIKE '%{$_GET['search']}%'";
+    echo "<p>คุณกำลังค้นหา : {$_GET['search']}</p>";
+}
  $result = mysqli_query($conn, $sql);
  ?>
+ <form action="" method="get">
+    <label for="search">ช่องค้นหา</label>
+    <input type="text" name="search" id="search" placeholder="ช่องค้นหา...">
+    <button type="submit" name="search_click">ค้นหา</button>
+</form>
 <table style="width:100%;" border="1">
 <tr>
         <th>รหัสภาพยนต์</th>
