@@ -8,5 +8,4 @@
     <br><br>
     <button type="submit" name="login">เข้าสู่ระบบ</button>
     <button type="reset">ลบข้อความทังหมด</button>
-    <a href ="insert_form.php">เพิ่มผู้ใช้</a> 
 </form>
